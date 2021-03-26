@@ -1,0 +1,41 @@
+<div class="pizzas">
+  <div class="container">
+    <div class="pizzas__header">
+      <div class="pizzas__title">{{pizzeriaName || 'Choose pizzeria'}}</div>
+      <div class="pizzas-action">
+        <app-basket
+          (showOrder)="onShowOrder()"
+        ></app-basket>
+        <div class="pizzas-action__back" [routerLink]="['/']">
+          <img src="assets/img/back-arrow.svg" alt="back">
+          <span>Back to list</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pizzas__types">
+      <div *ngFor="let pizza of pizzas" class="pizzas-types">
+        <div class="pizzas-types__photo">
+          <img [src]="pizza.image_url" alt="pizza">
+        </div>
+        <div class="pizzas-types__about pizza-about">
+          <div class="pizza-about__title">
+            {{pizza.name}}
+          </div>
+          <div class="pizza-about__description">
+            {{pizza.description}}
+          </div>
+          <div class="pizza-about__order-price order-price">
+            <button (click)="onAddPizza(pizza)" class="order-price__button" type="button">
+              order now
+            </button>
+            <div class="order-price__price">
+              Price: <span>${{pizza.price}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

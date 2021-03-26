@@ -1,0 +1,46 @@
+<div mat-dialog-title class="order-header">
+  <div class="order-header__basket-title">
+    <img src="assets/img/basket-large.svg" alt="basket">
+    <div class="order-header__title">
+      Your order
+    </div>
+  </div>
+  <div class="order-header__back" (click)="onNoClick()">
+    <span>Choose more</span>
+    <div class="order-header__back-img-text">
+      <img src="assets/img/back-arrow.svg" alt="back">
+      <span>pizza</span>
+    </div>
+  </div>
+</div>
+<mat-dialog-content
+  *ngIf="selectPizzas.length !== 0; else emptyOrder"
+>
+  <app-pizza-order-list
+    *ngFor="let pizza of selectPizzas"
+    [selectedPizza]="pizza"
+    (deletePizza)="onDeletePizza($event)"
+    (changeCountPizza)="onChangeCountPizza($event)"
+  ></app-pizza-order-list>
+</mat-dialog-content>
+<ng-template #emptyOrder>
+  <mat-dialog-content>
+    <div class="empty-order">
+      The basket is empty...
+    </div>
+  </mat-dialog-content>
+</ng-template>
+<mat-dialog-actions class="order-footer">
+  <div class="order-footer__tax">
+    Tax:&nbsp;${{totalTaxOrder | number : '1.2-2'}}
+  </div>
+  <div class="order-footer__price">
+    Price:&nbsp;${{(subTotalPriceOrder | number : '1.2-2') || 0}}
+  </div>
+  <div class="order-footer__total-price">
+    <span class="order-footer__total-price-text">Total Price:</span>
+    <span class="order-footer__total-price-price">&nbsp;${{totalPriceOrder | number: '1.2-2'}}</span>
+  </div>
+  <button class="order-footer__submit" type="button" [mat-dialog-close]="true" (click)="createPost()">submit order
+  </button>
+</mat-dialog-actions>

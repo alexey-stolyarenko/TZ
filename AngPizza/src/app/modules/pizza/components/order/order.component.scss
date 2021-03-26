@@ -1,0 +1,134 @@
+.order-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 70px 70px 30px 70px;
+
+  @media screen and (max-width: 992px) {
+    padding: 20px;
+  }
+
+  @media screen and (max-width: 568px) {
+    padding: 10px;
+  }
+
+  &__basket-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @media screen and (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 64px;
+    color: #ffffff;
+    padding-left: 20px;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 50px;
+    }
+    @media screen and (max-width: 992px) {
+      font-size: 40px;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 30px;
+    }
+  }
+
+  &__back {
+    cursor: pointer;
+
+    img {
+      padding-right: 10px;
+    }
+
+    span {
+      font-weight: 500;
+      font-size: 18px;
+      color: #CAD7F9;
+    }
+  }
+
+  &__back-img-text {
+    display: flex;
+    padding-left: 35px;
+  }
+}
+
+::ng-deep mat-dialog-container {
+  background-color: #10111C !important;
+  height: auto !important;
+}
+
+mat-dialog-actions {
+  justify-content: space-evenly !important;
+}
+
+.order-footer {
+  padding-top: 50px;
+  display: flex;
+  padding-bottom: 50px;
+
+  &__tax {
+    font-weight: 500;
+    font-size: 18px;
+    color: #CAD7F9;
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 18px;
+    color: #CAD7F9;
+  }
+
+  &__total-price-text {
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+  }
+
+  &__total-price-price {
+    color: #FFB800;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &__submit {
+    text-transform: uppercase;
+    background-color: #72B85A;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 13px 35px;
+    border-radius: 45px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all ease-in-out .3s;
+    border: 1px solid #72B85A;
+
+    @media screen and (max-width: 568px) {
+      margin-top: 20px;
+    }
+
+    &:hover {
+      background-color: #10111C;
+      color: #72B85A;
+      transition: all ease-in-out .3s;
+      border: 1px solid #72B85A;
+    }
+
+    &:active, &:focus {
+      outline: none;
+    }
+  }
+}
+
+.empty-order {
+  text-align: center;
+  color: #ffffff;
+  font-size: 25px;
+}

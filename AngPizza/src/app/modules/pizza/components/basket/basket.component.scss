@@ -1,0 +1,24 @@
+.basket {
+  width: 170px;
+  background-color: #10111C;
+  padding: 15px 20px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &__description {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &__count {
+    font-weight: bold;
+    font-size: 18px;
+    color: #8DE270;
+  }
+}

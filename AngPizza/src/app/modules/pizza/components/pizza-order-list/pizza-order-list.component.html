@@ -1,0 +1,29 @@
+<div class="order-body">
+  <div class="order-body__img">
+    <img [src]="selectedPizza.image_url" alt="img">
+  </div>
+  <div class="order-body__info body-info">
+    <div class="body-info__header">
+      <div class="body-info__title">
+        {{selectedPizza.name}}
+      </div>
+      <div class="body-info__close">
+        <img src="assets/img/delete.svg" alt="delete" (click)="onDeletePizza()">
+      </div>
+    </div>
+    <div class="body-info__price-tax">
+      <div>
+        Price:&nbsp;{{selectedPizza.price}}
+      </div>
+      <div class="body-info__tax">
+        Tax:&nbsp;{{!selectedPizza.is_taxed ? 0 : selectedPizza.is_taxed}}
+      </div>
+    </div>
+    <div class="body-info__count">
+      <div class="body-info__amount">Amount:</div>
+      <div class="body-info__number">
+        <input min="1" type="number" (input)="onChangeCount($event)" value="{{selectedPizza.count || 1}}">
+      </div>
+    </div>
+  </div>
+</div>

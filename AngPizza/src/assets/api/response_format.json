@@ -1,0 +1,11 @@
+result = {
+  pizzeria_id = 3,
+  pizza_items = [
+    {pizza_id: 1, quantity: 3, subtotal: 100, tax: 20, total: 120},
+    {pizza_id: 2, quantity: 2, subtotal: 50, tax: 10, total: 60},
+    {pizza_id: 3, quantity: 1, subtotal: 60, tax: 15, total: 75}
+  ],
+  subtotal = 210,
+  tax = 45,
+  total = 255,
+}

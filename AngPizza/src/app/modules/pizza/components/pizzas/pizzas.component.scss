@@ -1,0 +1,177 @@
+.container {
+  max-width: 1120px;
+  width: 1120px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  position: relative;
+
+  @media screen and (max-width: 1200px) {
+    width: auto;
+  }
+}
+
+.pizzas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 1200px) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 64px;
+    color: #ffffff;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 50px;
+    }
+    @media screen and (max-width: 992px) {
+      font-size: 40px;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 30px;
+    }
+  }
+
+  &__types {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 50px;
+  }
+}
+
+.pizzas-types {
+  display: flex;
+  flex-direction: row;
+  padding-top: 25px;
+  @media screen and (max-width: 1200px) {
+    flex-wrap: wrap;
+  }
+
+  &__photo {
+    height: 265px;
+    overflow: hidden;
+    flex-basis: 40%;
+    @media screen and (max-width: 1200px) {
+      flex-basis: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      background-color: #10111C;
+    }
+  }
+
+  &__about {
+    background-color: #10111C;
+    flex-basis: 60%;
+    padding: 45px 30px;
+
+    @media screen and (max-width: 1200px) {
+      flex-basis: 100%;
+    }
+  }
+}
+
+.pizza-about {
+  &__title {
+    font-weight: bold;
+    font-size: 22px;
+    color: #ffffff;
+  }
+
+  &__description {
+    padding-top: 15px;
+    font-size: 16px;
+    color: #CAD7F9
+  }
+}
+
+.order-price {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__button {
+    text-transform: uppercase;
+    background-color: #72B85A;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 13px 35px;
+    border-radius: 45px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all ease-in-out .3s;
+    border: 1px solid #72B85A;
+
+    @media screen and (max-width: 568px) {
+      font-size: 12px;
+      padding: 10px 20px;
+    }
+
+    &:hover {
+      background-color: #10111C;
+      color: #72B85A;
+      transition: all ease-in-out .3s;
+      border: 1px solid #72B85A;
+    }
+
+    &:active, &:focus {
+      outline: none;
+    }
+  }
+
+  &__price {
+    font-size: 16px;
+    color: #CAD7F9;
+    padding-left: 40px;
+
+    span {
+      font-size: 18px;
+      color: #FFB800;
+    }
+  }
+
+}
+
+.pizzas-action {
+  &__back {
+    background-color: #10111C;
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 170px;
+
+    &:hover img {
+      margin-left: -10px;
+      transition: all ease-in-out .3s;
+    }
+
+    span {
+      font-size: 16px;
+      color: #FFFFFF;
+      padding-left: 15px;
+    }
+
+    img {
+      transition: all ease-in-out .3s;
+    }
+  }
+}

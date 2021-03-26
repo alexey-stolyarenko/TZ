@@ -1,0 +1,22 @@
+<div class="pizzerias">
+  <div class="container">
+    <div class="pizzerias-header">
+      <div class="pizzerias-header__title">Welcome</div>
+      <div class="pizzerias-header__description">Choose your pizzeria</div>
+    </div>
+
+    <div class="pizzerias__types">
+      <div *ngFor="let pizzeria of pizzerias" class="pizzerias-types">
+        <div class="pizzerias-types__title">
+          {{pizzeria.name}}
+        </div>
+        <div class="pizzerias-types__address">
+          {{pizzeria.address}}
+        </div>
+        <button type="button" (click)="onChoose(pizzeria)"
+                [routerLink]="['/pizzerias', pizzeria.name.split(' ').shift()]" class="pizzerias-types__button">choose
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
