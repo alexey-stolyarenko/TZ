@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 70px 70px 30px 70px;
+  padding: 25px 50px 25px 50px;
 
   @media screen and (max-width: 992px) {
     padding: 20px;
@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+
 
     @media screen and (max-width: 768px) {
       flex-wrap: wrap;
@@ -34,9 +35,7 @@
     }
     @media screen and (max-width: 992px) {
       font-size: 40px;
-    }
-    @media screen and (max-width: 768px) {
-      font-size: 30px;
+      display: none;
     }
   }
 
@@ -74,28 +73,65 @@ mat-dialog-actions {
   display: flex;
   padding-bottom: 50px;
 
+  @media screen and (max-width: 992px) {
+    padding: 30px 20px;
+  }
+
+
   &__tax {
     font-weight: 500;
     font-size: 18px;
     color: #CAD7F9;
+    @media screen and (max-width: 992px) {
+      flex-basis: 50%;
+    }
+    @media screen and (max-width: 568px){
+      font-size: 16px;
+    }
   }
 
   &__price {
     font-weight: 500;
     font-size: 18px;
     color: #CAD7F9;
+    @media screen and (max-width: 992px) {
+      flex-basis: 50%;
+      text-align: end;
+    }
+    @media screen and (max-width: 568px){
+      font-size: 16px;
+    }
+  }
+
+  &__total-price {
+    @media screen and (max-width: 992px) {
+      margin-top: 20px;
+      flex-basis: 50%;
+    }
+    @media screen and (max-width: 768px) {
+      flex-basis: 100%;
+      text-align: center;
+    }
   }
 
   &__total-price-text {
     font-weight: bold;
     font-size: 20px;
     color: #ffffff;
+
+    @media screen and (max-width: 568px) {
+      font-size: 18px;
+    }
   }
 
   &__total-price-price {
     color: #FFB800;
     font-size: 20px;
     font-weight: bold;
+
+    @media screen and (max-width: 568px) {
+      font-size: 18px;
+    }
   }
 
   &__submit {
@@ -110,8 +146,14 @@ mat-dialog-actions {
     transition: all ease-in-out .3s;
     border: 1px solid #72B85A;
 
+    @media screen and (max-width: 992px) {
+      margin-top: 20px;
+    }
+
     @media screen and (max-width: 568px) {
       margin-top: 20px;
+      font-size: 12px;
+      padding: 10px 24px;
     }
 
     &:hover {
@@ -131,4 +173,22 @@ mat-dialog-actions {
   text-align: center;
   color: #ffffff;
   font-size: 25px;
+}
+
+::ng-deep mat-dialog-content {
+  @media screen and (max-width: 1920px) {
+    max-height: 65vh !important;
+  }
+
+  @media screen and (max-width: 1366px) {
+    max-height: 400px !important;
+  }
+
+  @media screen and (max-width: 768px){
+    max-height: 55vh!important;
+  }
+
+  @media screen and (max-width: 320px) {
+    max-height: 42vh !important;
+  }
 }

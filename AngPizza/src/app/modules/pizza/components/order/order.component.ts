@@ -59,5 +59,6 @@ export class OrderComponent implements OnInit {
     const result = this.pizzaService.createPost();
     console.log(result);
     this.pizzaService.zeroingSelectedPizza();
+    this.pizzaService.getTotalCountOrder()
   }
 }

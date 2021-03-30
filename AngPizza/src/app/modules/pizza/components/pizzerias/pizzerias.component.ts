@@ -11,13 +11,15 @@ export class PizzeriasComponent implements OnInit {
 
   pizzerias: PizzeriasType[] = [];
 
-  constructor(private http: HttpClient, private pizzaService: PizzaService) {
+  constructor(private http: HttpClient, private pizzaService: PizzaService,) {
   }
 
   ngOnInit(): void {
     this.pizzaService.getPizzerias()
       .subscribe(
-        (pizzeriasInfo) => this.pizzerias = pizzeriasInfo,
+        (pizzeriasInfo) => {
+             this.pizzerias = pizzeriasInfo
+        },
         (error) => {
           console.log(error);
         }

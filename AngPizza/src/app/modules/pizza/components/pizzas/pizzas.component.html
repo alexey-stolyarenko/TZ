@@ -1,11 +1,13 @@
 <div class="pizzas">
   <div class="container">
     <div class="pizzas__header">
-      <div class="pizzas__title">{{pizzeriaName || 'Choose pizzeria'}}</div>
+      <div class="pizzas__title">{{pizzeriaName || redirectToPizzerias()}}</div>
       <div class="pizzas-action">
-        <app-basket
-          (showOrder)="onShowOrder()"
-        ></app-basket>
+        <div class="pizzas-action__basket">
+          <app-basket
+            (showOrder)="onShowOrder()"
+          ></app-basket>
+        </div>
         <div class="pizzas-action__back" [routerLink]="['/']">
           <img src="assets/img/back-arrow.svg" alt="back">
           <span>Back to list</span>
@@ -16,7 +18,9 @@
     <div class="pizzas__types">
       <div *ngFor="let pizza of pizzas" class="pizzas-types">
         <div class="pizzas-types__photo">
-          <img [src]="pizza.image_url" alt="pizza">
+          <div class="pizzas-types__photo-img">
+            <img [src]="pizza.image_url" alt="pizza">
+          </div>
         </div>
         <div class="pizzas-types__about pizza-about">
           <div class="pizza-about__title">

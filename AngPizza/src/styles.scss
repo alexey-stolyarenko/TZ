@@ -11,3 +11,35 @@ html, body {
   min-width: 320px;
   font-family: 'Red Hat Text', sans-serif;
 }
+
+::-webkit-scrollbar-button {
+  background-image:url("#");
+  background-repeat:no-repeat;
+  width:5px;
+  height:0;
+}
+
+::-webkit-scrollbar-track {
+  background-color:#252739
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-color:#3F4458;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color:#72B85A;
+}
+
+::-webkit-resizer{
+  background-image:url("#");
+  background-repeat:no-repeat;
+  width:4px;
+  height:0;
+}
+
+::-webkit-scrollbar{
+  width: 7px;
+}

@@ -4,6 +4,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {OrderComponent} from "../order/order.component";
 import {Observable} from "rxjs";
 import {BreakpointObserver, Breakpoints, BreakpointState} from "@angular/cdk/layout";
+import { Router} from "@angular/router";
 
 @Component({
   selector: 'app-pizzas',
@@ -29,13 +30,15 @@ export class PizzasComponent implements OnInit {
   (
     private pizzasService: PizzaService,
     private dialog: MatDialog,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    private router: Router
   ) {
   }
 
   ngOnInit(): void {
     this.pizzeriaName = this.pizzasService.putPizzeriaName();
     this.pizzeriaId = this.pizzasService.putPizzeriaId();
+
     this.pizzasService.getPizzas()
       .subscribe(
         (pizzas) => {
@@ -74,5 +77,9 @@ export class PizzasComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       smallDialogSubscription.unsubscribe();
     });
+  }
+
+  redirectToPizzerias() {
+    this.router.navigate(['/'])
   }
 }

@@ -8,6 +8,10 @@
   @media screen and (max-width: 1200px) {
     width: auto;
   }
+  @media screen and (max-width: 598px) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
 }
 
 .pizzas {
@@ -25,6 +29,10 @@
       flex-wrap: wrap;
       justify-content: space-around;
     }
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+
   }
 
   &__title {
@@ -40,6 +48,7 @@
     }
     @media screen and (max-width: 768px) {
       font-size: 30px;
+      text-align: center;
     }
   }
 
@@ -48,6 +57,10 @@
     flex-direction: column;
     justify-content: space-between;
     padding-top: 50px;
+
+    @media screen and (max-width: 568px) {
+      padding-top: 15px;
+    }
   }
 }
 
@@ -55,15 +68,20 @@
   display: flex;
   flex-direction: row;
   padding-top: 25px;
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 9920px) {
     flex-wrap: wrap;
+  }
+  @media screen and (max-width: 568px) {
+    padding-top: 0;
   }
 
   &__photo {
-    height: 265px;
+    height: 255px;
     overflow: hidden;
     flex-basis: 40%;
-    @media screen and (max-width: 1200px) {
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 992px) {
       flex-basis: 100%;
     }
 
@@ -71,16 +89,29 @@
       width: 100%;
       height: auto;
       background-color: #10111C;
+      @media screen and (max-width: 992px) {
+        height: auto;
+      }
     }
+  }
+
+  &__photo-img{
+  flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
   }
 
   &__about {
     background-color: #10111C;
     flex-basis: 60%;
-    padding: 45px 30px;
+    padding: 42px 30px;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 992px) {
       flex-basis: 100%;
+    }
+    @media screen and (max-width: 568px) {
+      padding: 30px 30px;
     }
   }
 }
@@ -105,6 +136,14 @@
   flex-direction: row;
   align-items: center;
 
+  @media screen and (max-width: 768px){
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 568px){
+    padding-top: 30px;
+  }
+
   &__button {
     text-transform: uppercase;
     background-color: #72B85A;
@@ -119,7 +158,7 @@
 
     @media screen and (max-width: 568px) {
       font-size: 12px;
-      padding: 10px 20px;
+      padding: 10px 24px;
     }
 
     &:hover {
@@ -148,6 +187,14 @@
 }
 
 .pizzas-action {
+
+  @media screen and (max-width: 768px) {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+  }
+
   &__back {
     background-color: #10111C;
     padding: 15px 20px;
@@ -159,19 +206,38 @@
     cursor: pointer;
     width: 170px;
 
-    &:hover img {
-      margin-left: -10px;
-      transition: all ease-in-out .3s;
+    &:active{
+      outline: none;
     }
 
-    span {
-      font-size: 16px;
-      color: #FFFFFF;
-      padding-left: 15px;
+    @media screen and (max-width: 768px) {
+      flex-basis: 50%;
+      order: 1;
+      width: 100%;
+      border-top: 1px solid #72B85A;
+      border-radius: 0;
     }
+  }
 
-    img {
-      transition: all ease-in-out .3s;
+  &__basket {
+    @media screen and (max-width: 768px) {
+      flex-basis: 50%;
+      order: 2;
     }
+  }
+
+  &:hover img {
+    margin-left: -10px;
+    transition: all ease-in-out .3s;
+  }
+
+  span {
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-left: 15px;
+  }
+
+  img {
+    transition: all ease-in-out .3s;
   }
 }

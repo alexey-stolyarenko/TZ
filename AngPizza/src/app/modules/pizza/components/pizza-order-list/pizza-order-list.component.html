@@ -22,7 +22,7 @@
     <div class="body-info__count">
       <div class="body-info__amount">Amount:</div>
       <div class="body-info__number">
-        <input min="1" type="number" (input)="onChangeCount($event)" value="{{selectedPizza.count || 1}}">
+        <input min="1" type="number"  step="1" (input)="onChangeCount($event)" value="{{selectedPizza.count || 1}}">
       </div>
     </div>
   </div>

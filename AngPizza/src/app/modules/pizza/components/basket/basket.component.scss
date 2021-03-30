@@ -10,6 +10,12 @@
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 0;
+    border-top: 1px solid #72B85A;
+    border-radius: 0;
+  }
 
   &__description {
     font-size: 12px;
